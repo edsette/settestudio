@@ -95,6 +95,13 @@
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
 }
 
+/* Theme-aware SVG icons */
+svg {
+    color: inherit;
+    fill: currentColor;
+    stroke: currentColor;
+}
+
 /* Theme Toggle Icons */
 .theme-toggle {
     position: relative;
@@ -119,26 +126,26 @@
     pointer-events: none;
 }
 
-/* Light mode: show sun, hide moon */
+/* Light mode: show moon, hide sun */
 .theme-toggle .icon-sun {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-}
-
-.theme-toggle .icon-moon {
-    opacity: 0;
-    transform: scale(0.8) rotate(-90deg);
-}
-
-/* Dark mode: show moon, hide sun */
-[data-theme="dark"] .theme-toggle .icon-sun {
     opacity: 0;
     transform: scale(0.8) rotate(90deg);
 }
 
-[data-theme="dark"] .theme-toggle .icon-moon {
+.theme-toggle .icon-moon {
     opacity: 1;
     transform: scale(1) rotate(0deg);
+}
+
+/* Dark mode: show sun, hide moon */
+[data-theme="dark"] .theme-toggle .icon-sun {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+    opacity: 0;
+    transform: scale(0.8) rotate(-90deg);
 }
 
 /* Reset & Base Styles */

@@ -136,28 +136,29 @@
 .icon-moon {
     position: absolute;
     transition: opacity var(--transition-base), transform var(--transition-base);
+    pointer-events: none;
 }
 
-[data-theme="dark"] .icon-sun {
-    opacity: 1;
-    transform: rotate(0deg);
-}
-
-[data-theme="dark"] .icon-moon {
-    opacity: 0;
-    transform: rotate(-90deg);
-}
-
-[data-theme="light"] .icon-sun,
-:not([data-theme="dark"]) .icon-sun {
+/* Light mode: show moon, hide sun */
+.theme-toggle .icon-sun {
     opacity: 0;
     transform: rotate(90deg);
 }
 
-[data-theme="light"] .icon-moon,
-:not([data-theme="dark"]) .icon-moon {
+.theme-toggle .icon-moon {
     opacity: 1;
     transform: rotate(0deg);
+}
+
+/* Dark mode: show sun, hide moon */
+[data-theme="dark"] .theme-toggle .icon-sun {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+    opacity: 0;
+    transform: rotate(-90deg);
 }
 
 /* Language Selector */
