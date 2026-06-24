@@ -1,0 +1,62 @@
+# Eduardo Sette Portfolio - Robots.txt
+# https://eduardosette.com.br
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /assets/
+Disallow: /css/
+Disallow: /js/
+Disallow: /data/
+Disallow: /languages/
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://eduardosette.com.br/sitemap.xml
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Allow important files
+User-agent: *
+Allow: /*.css
+Allow: /*.js
+Allow: /*.xml
+Allow: /*.html
+
+# Block admin and private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /temp/
+
+# Allow images for SEO
+User-agent: *
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.webp
