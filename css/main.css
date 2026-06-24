@@ -95,6 +95,52 @@
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
 }
 
+/* Theme Toggle Icons */
+.theme-toggle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.theme-toggle .icon-sun,
+.theme-toggle .icon-moon {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+/* Light mode: show sun, hide moon */
+.theme-toggle .icon-sun {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.theme-toggle .icon-moon {
+    opacity: 0;
+    transform: scale(0.8) rotate(-90deg);
+}
+
+/* Dark mode: show moon, hide sun */
+[data-theme="dark"] .theme-toggle .icon-sun {
+    opacity: 0;
+    transform: scale(0.8) rotate(90deg);
+}
+
+[data-theme="dark"] .theme-toggle .icon-moon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
 /* Reset & Base Styles */
 *,
 *::before,

@@ -40,6 +40,9 @@ class ThemeManager {
         
         // Dispatch custom event
         window.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme } }));
+        
+        // Debug log
+        console.log('Theme changed to:', theme);
     }
     
     toggleTheme() {
@@ -50,7 +53,13 @@ class ThemeManager {
     bindEvents() {
         const themeToggle = document.getElementById('theme-toggle');
         if (themeToggle) {
-            themeToggle.addEventListener('click', () => this.toggleTheme());
+            console.log('Theme toggle button found, adding click listener');
+            themeToggle.addEventListener('click', (e) => {
+                console.log('Theme toggle clicked!');
+                this.toggleTheme();
+            });
+        } else {
+            console.error('Theme toggle button NOT found!');
         }
         
         // Listen for system theme changes
